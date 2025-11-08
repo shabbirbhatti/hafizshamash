@@ -31,8 +31,8 @@ const Navigation = () => {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold text-lg group-hover:scale-110 transition-transform">
               HM
             </div>
-            <span className={`font-bold text-lg sm:text-xl text-foreground hidden sm:inline-block ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}>
-              {language === 'en' ? 'Hafiz M. Shamash' : language === 'ur' ? 'حافظ مہر شمس' : 'ハーフィズ・シャマシュ'}
+            <span className={`font-bold text-lg sm:text-xl text-foreground ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}>
+              {language === 'en' ? 'Hafiz Mehar Shamash' : language === 'ur' ? 'حافظ مہر شمس' : 'ハーフィズ・シャマシュ'}
             </span>
           </Link>
 
