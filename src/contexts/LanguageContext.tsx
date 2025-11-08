@@ -20,8 +20,8 @@ const translations = {
     contact: "Contact",
     
     // Hero
-    heroTitle: "Bridging Communities Between Pakistan and Japan",
-    heroSubtitle: "Community Leader | Businessman | Voice of Japan Founder",
+    heroTitle: "Connecting Communities Through Leadership & Vision",
+    heroSubtitle: "Community Leader | Entrepreneur | Media Founder",
     learnMore: "Learn More",
     whatsappNow: "WhatsApp Now",
     
@@ -30,7 +30,7 @@ const translations = {
     biography: "Biography",
     
     // Community
-    communityTitle: "Pakistan-Japan Community Relations",
+    communityTitle: "Community Leadership & Relations",
     diplomaticWork: "Diplomatic & Community Work",
     
     // Voice of Japan
@@ -54,7 +54,7 @@ const translations = {
     chatOnWhatsApp: "Chat on WhatsApp",
     
     // Footer
-    connectingHearts: "Connecting Hearts Between Pakistan and Japan",
+    connectingHearts: "Building Bridges, Creating Opportunities",
     designedBy: "Designed by Shabbir Bhatti",
   },
   ur: {
@@ -68,8 +68,8 @@ const translations = {
     contact: "رابطہ",
     
     // Hero
-    heroTitle: "پاکستان اور جاپان کے درمیان پل بنانا",
-    heroSubtitle: "کمیونٹی لیڈر | کاروباری شخصیت | وائس آف جاپان بانی",
+    heroTitle: "قیادت اور وژن کے ذریعے کمیونٹیز کو جوڑنا",
+    heroSubtitle: "کمیونٹی لیڈر | کاروباری | میڈیا بانی",
     learnMore: "مزید جانیں",
     whatsappNow: "واٹس ایپ کریں",
     
@@ -78,7 +78,7 @@ const translations = {
     biography: "سوانح حیات",
     
     // Community
-    communityTitle: "پاکستان-جاپان کمیونٹی تعلقات",
+    communityTitle: "کمیونٹی قیادت اور تعلقات",
     diplomaticWork: "سفارتی اور کمیونٹی کام",
     
     // Voice of Japan
@@ -102,7 +102,7 @@ const translations = {
     chatOnWhatsApp: "واٹس ایپ پر چیٹ کریں",
     
     // Footer
-    connectingHearts: "پاکستان اور جاپان کے درمیان دل ملانا",
+    connectingHearts: "پل بنانا، مواقع پیدا کرنا",
     designedBy: "ڈیزائن از شبیر بھٹی",
   },
   jp: {
@@ -116,8 +116,8 @@ const translations = {
     contact: "お問い合わせ",
     
     // Hero
-    heroTitle: "パキスタンと日本のコミュニティを繋ぐ",
-    heroSubtitle: "コミュニティリーダー | 実業家 | ボイス・オブ・ジャパン創設者",
+    heroTitle: "リーダーシップとビジョンでコミュニティを繋ぐ",
+    heroSubtitle: "コミュニティリーダー | 起業家 | メディア創設者",
     learnMore: "詳細を見る",
     whatsappNow: "WhatsAppで連絡",
     
@@ -126,7 +126,7 @@ const translations = {
     biography: "経歴",
     
     // Community
-    communityTitle: "パキスタン・日本コミュニティ関係",
+    communityTitle: "コミュニティリーダーシップと関係",
     diplomaticWork: "外交・コミュニティ活動",
     
     // Voice of Japan
@@ -150,7 +150,7 @@ const translations = {
     chatOnWhatsApp: "WhatsAppでチャット",
     
     // Footer
-    connectingHearts: "パキスタンと日本の心を繋ぐ",
+    connectingHearts: "架け橋を築き、機会を創造する",
     designedBy: "デザイン：シャビール・バッティ",
   },
 };
