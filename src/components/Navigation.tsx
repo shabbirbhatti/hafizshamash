@@ -40,12 +40,12 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-6">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-all hover:text-primary relative pb-1 ${
+                className={`text-sm font-medium transition-all hover:text-primary relative pb-1 whitespace-nowrap ${
                   isActive(item.path) ? 'text-primary' : 'text-foreground'
                 } ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}
               >

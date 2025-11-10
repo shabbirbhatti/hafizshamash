@@ -7,6 +7,9 @@ import heroImage from '@/assets/hero-image.jpg';
 import meetingImage from '@/assets/meeting-formal.jpg';
 import pakistanFlag from '@/assets/flag-pakistan.png';
 import japanFlag from '@/assets/flag-japan.png';
+import bannerUrdu from '@/assets/banner-urdu.jpg';
+import communityGroup from '@/assets/community-group.jpg';
+import audienceImg from '@/assets/audience.jpg';
 import { ArrowRight, Users, Newspaper, Car, Calendar, Sparkles } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -27,19 +30,38 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-accent z-10"></div>
-        <img
-          src={heroImage}
-          alt="Hafiz Mahar Shamash"
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
-        />
         
-        {/* Waving Flags Carousel */}
-        <div className="absolute top-20 left-0 right-0 z-20 flex justify-center gap-8 sm:gap-12">
+        {/* Multiple Background Images */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={heroImage}
+            alt="Hafiz Mahar Shamash"
+            className="absolute inset-0 w-full h-full object-cover opacity-15"
+          />
+          <img
+            src={bannerUrdu}
+            alt="Voice of Japan Banner"
+            className="absolute top-0 left-0 w-1/3 h-1/2 object-cover opacity-20"
+          />
+          <img
+            src={communityGroup}
+            alt="Community Group"
+            className="absolute bottom-0 right-0 w-1/3 h-1/2 object-cover opacity-20"
+          />
+          <img
+            src={audienceImg}
+            alt="Audience"
+            className="absolute top-1/4 right-0 w-1/4 h-1/3 object-cover opacity-15"
+          />
+        </div>
+        
+        {/* Waving Flags Carousel - Repositioned to Top Right */}
+        <div className="absolute top-4 right-4 sm:top-8 sm:right-8 z-20 flex gap-3 sm:gap-4">
           <div className="relative animate-wave" style={{ animationDelay: '0s' }}>
             <img 
               src={flags[currentFlag]} 
               alt="Flag" 
-              className="w-24 h-16 sm:w-32 sm:h-20 object-cover rounded-lg shadow-2xl transition-all duration-500"
+              className="w-16 h-12 sm:w-24 sm:h-16 md:w-28 md:h-20 object-cover rounded-lg shadow-2xl transition-all duration-500"
               style={{ 
                 transformOrigin: 'left center',
               }}
@@ -49,7 +71,7 @@ const Home = () => {
             <img 
               src={flags[(currentFlag + 1) % flags.length]} 
               alt="Flag" 
-              className="w-24 h-16 sm:w-32 sm:h-20 object-cover rounded-lg shadow-2xl transition-all duration-500"
+              className="w-16 h-12 sm:w-24 sm:h-16 md:w-28 md:h-20 object-cover rounded-lg shadow-2xl transition-all duration-500"
               style={{ 
                 transformOrigin: 'left center',
               }}
@@ -57,7 +79,7 @@ const Home = () => {
           </div>
         </div>
         
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center text-primary-foreground">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center text-primary-foreground pt-16 sm:pt-0">
           <div className="animate-fadeIn max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm px-6 py-2 rounded-full mb-8">
               <Sparkles className="h-5 w-5" />
