@@ -5,10 +5,22 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import heroImage from '@/assets/hero-image.jpg';
 import meetingImage from '@/assets/meeting-formal.jpg';
+import pakistanFlag from '@/assets/flag-pakistan.png';
+import japanFlag from '@/assets/flag-japan.png';
 import { ArrowRight, Users, Newspaper, Car, Calendar, Sparkles } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const Home = () => {
   const { t, language } = useLanguage();
+  const [currentFlag, setCurrentFlag] = useState(0);
+  const flags = [pakistanFlag, japanFlag];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentFlag((prev) => (prev + 1) % flags.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -20,6 +32,31 @@ const Home = () => {
           alt="Hafiz Mahar Shamash"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
+        
+        {/* Waving Flags Carousel */}
+        <div className="absolute top-20 left-0 right-0 z-20 flex justify-center gap-8 sm:gap-12">
+          <div className="relative animate-wave" style={{ animationDelay: '0s' }}>
+            <img 
+              src={flags[currentFlag]} 
+              alt="Flag" 
+              className="w-24 h-16 sm:w-32 sm:h-20 object-cover rounded-lg shadow-2xl transition-all duration-500"
+              style={{ 
+                transformOrigin: 'left center',
+              }}
+            />
+          </div>
+          <div className="relative animate-wave" style={{ animationDelay: '0.2s' }}>
+            <img 
+              src={flags[(currentFlag + 1) % flags.length]} 
+              alt="Flag" 
+              className="w-24 h-16 sm:w-32 sm:h-20 object-cover rounded-lg shadow-2xl transition-all duration-500"
+              style={{ 
+                transformOrigin: 'left center',
+              }}
+            />
+          </div>
+        </div>
+        
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center text-primary-foreground">
           <div className="animate-fadeIn max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm px-6 py-2 rounded-full mb-8">

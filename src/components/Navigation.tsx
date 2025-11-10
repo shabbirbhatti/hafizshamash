@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useLanguage } from '@/contexts/LanguageContext';
+import logo from '@/assets/logo.png';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,9 +29,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold text-lg group-hover:scale-110 transition-transform">
-              HM
-            </div>
+            <img 
+              src={logo} 
+              alt="Hafiz Mehar Shamash Logo" 
+              className="w-12 h-12 object-contain group-hover:scale-110 transition-transform"
+            />
             <span className={`font-bold text-lg sm:text-xl text-foreground ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}>
               {language === 'en' ? 'Hafiz Mehar Shamash' : language === 'ur' ? 'حافظ مہر شمس' : 'ハーフィズ・シャマシュ'}
             </span>
