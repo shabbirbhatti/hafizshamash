@@ -56,12 +56,12 @@ const Home = () => {
         </div>
         
         {/* Waving Flags Carousel - Repositioned to Top Right */}
-        <div className="absolute top-4 right-4 sm:top-8 sm:right-8 z-20 flex gap-3 sm:gap-4">
+        <div className="absolute top-24 right-4 sm:top-28 sm:right-8 lg:right-12 z-20 flex gap-3 sm:gap-4">
           <div className="relative animate-wave" style={{ animationDelay: '0s' }}>
             <img 
               src={flags[currentFlag]} 
               alt="Flag" 
-              className="w-16 h-12 sm:w-24 sm:h-16 md:w-28 md:h-20 object-cover rounded-lg shadow-2xl transition-all duration-500"
+              className="w-20 h-14 sm:w-24 sm:h-16 md:w-28 md:h-20 object-cover rounded-lg shadow-2xl transition-all duration-500"
               style={{ 
                 transformOrigin: 'left center',
               }}
@@ -71,7 +71,7 @@ const Home = () => {
             <img 
               src={flags[(currentFlag + 1) % flags.length]} 
               alt="Flag" 
-              className="w-16 h-12 sm:w-24 sm:h-16 md:w-28 md:h-20 object-cover rounded-lg shadow-2xl transition-all duration-500"
+              className="w-20 h-14 sm:w-24 sm:h-16 md:w-28 md:h-20 object-cover rounded-lg shadow-2xl transition-all duration-500"
               style={{ 
                 transformOrigin: 'left center',
               }}
