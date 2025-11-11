@@ -68,8 +68,9 @@ const Navigation = () => {
             {/* Community Work Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button
-                  className={`text-sm font-medium transition-all hover:text-primary relative pb-1 whitespace-nowrap inline-flex items-center gap-1 ${
+                <Button
+                  variant="ghost"
+                  className={`text-sm font-medium transition-all hover:text-primary relative pb-1 whitespace-nowrap inline-flex items-center gap-1 h-auto p-0 ${
                     communityItems.some(item => isActive(item.path)) ? 'text-primary' : 'text-foreground'
                   } ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}
                 >
@@ -78,14 +79,14 @@ const Navigation = () => {
                   {communityItems.some(item => isActive(item.path)) && (
                     <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full"></span>
                   )}
-                </button>
+                </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48 bg-background border border-border shadow-lg z-50">
+              <DropdownMenuContent align="end" className="w-56 bg-background border-2 border-border shadow-xl z-[100]">
                 {communityItems.map((item) => (
                   <DropdownMenuItem key={item.path} asChild>
                     <Link
                       to={item.path}
-                      className={`w-full cursor-pointer ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}
+                      className={`w-full cursor-pointer hover:bg-muted transition-colors py-3 ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}
                     >
                       {item.label}
                     </Link>
@@ -130,21 +131,23 @@ const Navigation = () => {
               
               {/* Community Work Section */}
               <div className="border-t border-border pt-4 mt-2">
-                <p className={`text-xs font-semibold text-muted-foreground mb-3 uppercase ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}>
+                <p className={`text-sm font-bold text-foreground mb-3 ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}>
                   {language === 'en' ? 'Community Work' : language === 'ur' ? 'کمیونٹی ورک' : 'コミュニティワーク'}
                 </p>
-                {communityItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setIsOpen(false)}
-                    className={`text-base font-medium transition-colors hover:text-primary py-2 block pl-4 ${
-                      isActive(item.path) ? 'text-primary' : 'text-foreground'
-                    } ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                <div className="space-y-1">
+                  {communityItems.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setIsOpen(false)}
+                      className={`text-base font-medium transition-colors hover:text-primary hover:bg-muted/50 py-3 px-4 block rounded-lg ${
+                        isActive(item.path) ? 'text-primary bg-muted' : 'text-foreground'
+                      } ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

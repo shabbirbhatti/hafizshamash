@@ -117,13 +117,14 @@ const Home = () => {
             </p>
             <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl bg-muted" style={{ paddingBottom: '56.25%' }}>
               <iframe
-                src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fp%2F1KWcVQWdh4%2F&show_text=false&width=476&t=0"
+                src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fp%2F1KWcVQWdh4%2F&show_text=false&width=560&t=0&appId"
                 className="absolute top-0 left-0 w-full h-full"
-                style={{ border: 'none', overflow: 'hidden' }}
+                style={{ border: 'none' }}
                 scrolling="no"
                 frameBorder="0"
                 allowFullScreen={true}
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                loading="lazy"
               ></iframe>
             </div>
           </div>
