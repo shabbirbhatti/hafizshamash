@@ -55,30 +55,6 @@ const Home = () => {
           />
         </div>
         
-        {/* Waving Flags Carousel - Repositioned to Top Right */}
-        <div className="absolute top-24 right-4 sm:top-28 sm:right-8 lg:right-12 z-20 flex gap-3 sm:gap-4">
-          <div className="relative animate-wave" style={{ animationDelay: '0s' }}>
-            <img 
-              src={flags[currentFlag]} 
-              alt="Flag" 
-              className="w-20 h-14 sm:w-24 sm:h-16 md:w-28 md:h-20 object-cover rounded-lg shadow-2xl transition-all duration-500"
-              style={{ 
-                transformOrigin: 'left center',
-              }}
-            />
-          </div>
-          <div className="relative animate-wave" style={{ animationDelay: '0.2s' }}>
-            <img 
-              src={flags[(currentFlag + 1) % flags.length]} 
-              alt="Flag" 
-              className="w-20 h-14 sm:w-24 sm:h-16 md:w-28 md:h-20 object-cover rounded-lg shadow-2xl transition-all duration-500"
-              style={{ 
-                transformOrigin: 'left center',
-              }}
-            />
-          </div>
-        </div>
-        
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center text-primary-foreground pt-16 sm:pt-0">
           <div className="animate-fadeIn max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm px-6 py-2 rounded-full mb-8">
@@ -88,9 +64,33 @@ const Home = () => {
             <h1 className={`text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}>
               {t('heroTitle')}
             </h1>
-            <p className={`text-lg sm:text-xl md:text-2xl mb-10 opacity-95 max-w-2xl mx-auto ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}>
+            <p className={`text-lg sm:text-xl md:text-2xl mb-6 opacity-95 max-w-2xl mx-auto ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}>
               {t('heroSubtitle')}
             </p>
+            
+            {/* Waving Flags - Under Subtitle */}
+            <div className="flex justify-center gap-3 sm:gap-4 mb-10">
+              <div className="relative animate-wave" style={{ animationDelay: '0s' }}>
+                <img 
+                  src={flags[currentFlag]} 
+                  alt="Flag" 
+                  className="w-16 h-12 sm:w-20 sm:h-14 md:w-24 md:h-16 object-cover rounded-lg shadow-2xl transition-all duration-500"
+                  style={{ 
+                    transformOrigin: 'left center',
+                  }}
+                />
+              </div>
+              <div className="relative animate-wave" style={{ animationDelay: '0.2s' }}>
+                <img 
+                  src={flags[(currentFlag + 1) % flags.length]} 
+                  alt="Flag" 
+                  className="w-16 h-12 sm:w-20 sm:h-14 md:w-24 md:h-16 object-cover rounded-lg shadow-2xl transition-all duration-500"
+                  style={{ 
+                    transformOrigin: 'left center',
+                  }}
+                />
+              </div>
+            </div>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button asChild size="lg" variant="secondary" className="text-base sm:text-lg">
                 <Link to="/about">
@@ -105,9 +105,29 @@ const Home = () => {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10"></div>
       </section>
 
-      {/* Meeting Image Section */}
+      {/* Featured Video Section */}
       <section className="py-12 sm:py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto mb-12">
+            <h2 className={`text-3xl sm:text-4xl font-bold text-center mb-4 ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}>
+              {language === 'en' ? 'Voice of Japan' : language === 'ur' ? 'وائس آف جاپان' : 'ボイス・オブ・ジャパン'}
+            </h2>
+            <p className="text-center text-muted-foreground mb-8">
+              {language === 'en' ? 'Watch our latest community updates' : language === 'ur' ? 'ہماری تازہ ترین کمیونٹی اپ ڈیٹس دیکھیں' : '最新のコミュニティ更新をご覧ください'}
+            </p>
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fp%2F1KWcVQWdh4%2F&show_text=false&width=560&t=0"
+                className="absolute top-0 left-0 w-full h-full"
+                style={{ border: 'none', overflow: 'hidden' }}
+                scrolling="no"
+                frameBorder="0"
+                allowFullScreen={true}
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              ></iframe>
+            </div>
+          </div>
+          
           <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
             <img
               src={meetingImage}

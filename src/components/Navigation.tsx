@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useLanguage } from '@/contexts/LanguageContext';
 import logo from '@/assets/logo.png';
@@ -14,11 +20,14 @@ const Navigation = () => {
   const navItems = [
     { path: '/', label: t('home') },
     { path: '/about', label: t('about') },
+    { path: '/car-business', label: t('carBusiness') },
+    { path: '/contact', label: t('contact') },
+  ];
+
+  const communityItems = [
     { path: '/community', label: t('community') },
     { path: '/voice-of-japan', label: t('voiceOfJapan') },
-    { path: '/car-business', label: t('carBusiness') },
     { path: '/activities', label: t('activities') },
-    { path: '/contact', label: t('contact') },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -55,6 +64,36 @@ const Navigation = () => {
                 )}
               </Link>
             ))}
+            
+            {/* Community Work Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button
+                  className={`text-sm font-medium transition-all hover:text-primary relative pb-1 whitespace-nowrap inline-flex items-center gap-1 ${
+                    communityItems.some(item => isActive(item.path)) ? 'text-primary' : 'text-foreground'
+                  } ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}
+                >
+                  {language === 'en' ? 'Community Work' : language === 'ur' ? 'کمیونٹی ورک' : 'コミュニティワーク'}
+                  <ChevronDown className="h-3.5 w-3.5" />
+                  {communityItems.some(item => isActive(item.path)) && (
+                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full"></span>
+                  )}
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                {communityItems.map((item) => (
+                  <DropdownMenuItem key={item.path} asChild>
+                    <Link
+                      to={item.path}
+                      className={`w-full cursor-pointer ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}
+                    >
+                      {item.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
             <LanguageSwitcher />
           </div>
 
@@ -88,6 +127,25 @@ const Navigation = () => {
                   {item.label}
                 </Link>
               ))}
+              
+              {/* Community Work Section */}
+              <div className="border-t border-border pt-4 mt-2">
+                <p className={`text-xs font-semibold text-muted-foreground mb-3 uppercase ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}>
+                  {language === 'en' ? 'Community Work' : language === 'ur' ? 'کمیونٹی ورک' : 'コミュニティワーク'}
+                </p>
+                {communityItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`text-base font-medium transition-colors hover:text-primary py-2 block pl-4 ${
+                      isActive(item.path) ? 'text-primary' : 'text-foreground'
+                    } ${language === 'ur' ? 'urdu-text' : language === 'jp' ? 'japanese-text' : ''}`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         )}
