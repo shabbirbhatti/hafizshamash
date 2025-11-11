@@ -115,9 +115,9 @@ const Home = () => {
             <p className="text-center text-muted-foreground mb-8">
               {language === 'en' ? 'Watch our latest community updates' : language === 'ur' ? 'ہماری تازہ ترین کمیونٹی اپ ڈیٹس دیکھیں' : '最新のコミュニティ更新をご覧ください'}
             </p>
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl bg-muted" style={{ paddingBottom: '56.25%' }}>
               <iframe
-                src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fp%2F1KWcVQWdh4%2F&show_text=false&width=560&t=0"
+                src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fp%2F1KWcVQWdh4%2F&show_text=false&width=476&t=0"
                 className="absolute top-0 left-0 w-full h-full"
                 style={{ border: 'none', overflow: 'hidden' }}
                 scrolling="no"

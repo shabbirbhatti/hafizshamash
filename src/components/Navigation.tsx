@@ -80,7 +80,7 @@ const Navigation = () => {
                   )}
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48">
+              <DropdownMenuContent align="end" className="w-48 bg-background border border-border shadow-lg z-50">
                 {communityItems.map((item) => (
                   <DropdownMenuItem key={item.path} asChild>
                     <Link
